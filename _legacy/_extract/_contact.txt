@@ -1,0 +1,98 @@
+﻿<section class=section id=contact aria-labelledby=contactHeading>
+<div class=container>
+<div class="section-head reveal">
+<span class=eyebrow>Get in touch</span>
+<h2 id=contactHeading>Need Tax &amp; Compliance Assistance?</h2>
+<p>Send a message or call us directly â€” we usually reply the same working day.</p>
+</div>
+<div class=contact-grid>
+<div class="contact-info reveal">
+<div class=info-list>
+<div class=info-card>
+<span class=info-icon aria-hidden=true>ðŸ“ž</span>
+<div>
+<h3>Phone</h3>
+<span class=val>
+<a href=tel:+918126780246>8126780246</a>
+<br>
+<a href=tel:+919219481572>9219481572</a>
+</span>
+</div>
+</div>
+<div class=info-card>
+<span class=info-icon aria-hidden=true>ðŸ’¬</span>
+<div>
+<h3>WhatsApp</h3>
+<span class=val>
+<a class=wa href="https://wa.me/918126780246?text=Hi%20TaxSphere%2C%20I%20need%20help%20with%20GST%2FITR%2FTDS%20filing." target=_blank rel=noopener>wa.me/918126780246</a>
+<br>
+<a class=wa href="https://wa.me/919219481572?text=Hi%20TaxSphere%2C%20I%20need%20help%20with%20GST%2FITR%2FTDS%20filing." target=_blank rel=noopener>wa.me/919219481572</a>
+</span>
+</div>
+</div>
+<div class=info-card>
+<span class=info-icon aria-hidden=true>âœ‰ï¸</span>
+<div>
+<h3>Email</h3>
+<span class=val>
+<a href=mailto:Taxsphere11@gmail.com>Taxsphere11@gmail.com</a>
+</span>
+</div>
+</div>
+<div class=info-card>
+<span class=info-icon aria-hidden=true>ðŸ“</span>
+<div>
+<h3>Address</h3>
+<span class=val>Mohammadi Sarai, Near R.N Inter College,<br>Amroha, Uttar Pradesh</span>
+</div>
+</div>
+</div>
+<div class=map-wrap>
+<iframe title="Map showing TaxSphere Consultancy location at Mohammadi Sarai, Amroha" src="https://maps.google.com/?q=Mohammadi+Sarai+Amroha&output=embed" loading=lazy referrerpolicy=no-referrer-when-downgrade allowfullscreen>
+</iframe>
+</div>
+</div>
+<div class="form-card reveal">
+<h3>Send us a message</h3>
+<p class=fc-sub>Fill this quick form and we will get back on WhatsApp.</p>
+<form id=contactForm novalidate>
+<input name=botcheck class=botcheck tabindex=-1 autocomplete=off aria-hidden=true hidden>
+<div class=field>
+<label for=cf-name>Name <span class=req aria-hidden=true>*</span>
+</label> <input id=cf-name name=name autocomplete=name placeholder="Your full name" required>
+</div>
+<div class=field>
+<label for=cf-phone>Phone <span class=req aria-hidden=true>*</span>
+</label> <input type=tel id=cf-phone name=phone autocomplete=tel inputmode=tel pattern=[0-9]{10} placeholder="10-digit mobile number" required>
+</div>
+<div class=field>
+<label for=cf-email>Email</label> <input type=email id=cf-email name=email autocomplete=email placeholder=you@example.com>
+</div>
+<div class=field>
+<label for=cf-service>Service <span class=req aria-hidden=true>*</span>
+</label> <select id=cf-service name=service required>
+<option value="" selected disabled>Select a serviceâ€¦</option>
+<option>GST Registration</option>
+<option>GST Return Filing</option>
+<option>GST Refund</option>
+<option>GST Notice &amp; Department Work</option>
+<option>ITR Filing</option>
+<option>Income Tax Notice Reply</option>
+<option>TDS Returns</option>
+<option>MSME Registration</option>
+<option>Accounting &amp; Bookkeeping</option>
+<option>Other</option>
+</select>
+</div>
+<div class=field>
+<label for=cf-message>Message</label> <textarea id=cf-message name=message placeholder="Tell us briefly about your requirementâ€¦">
+</textarea>
+</div>
+<button class="btn btn-submit" type=submit>Send Message</button>
+<p class=form-note>Submitting opens WhatsApp with your details prefilled so we can reply instantly.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>

@@ -1,0 +1,46 @@
+﻿/div>
+</div>
+</section>
+<section class="section section--tint" id=reviews aria-labelledby=reviewsHeading>
+<div class=container>
+<div class="section-head reveal">
+<span class=eyebrow>Client reviews</span>
+<h2 id=reviewsHeading>What Our Clients Say</h2>
+<p>Traders, founders and manufacturers in and around Amroha trust us with their compliance.</p>
+</div>
+<div class=testi-grid>
+<figure class="testi reveal">
+<div class=stars aria-label="Rated 5 out of 5">â˜…â˜…â˜…â˜…â˜…</div>
+<blockquote>TaxSphere helped us with our GST compliance work seamlessly. Quick response, very professionalâ€¦</blockquote>
+<figcaption>
+<span class=avatar aria-hidden=true>RS</span> <span>
+<span class=who>Rajesh Sharma</span>
+<span class=role>Trader, Amroha</span>
+</span>
+</figcaption>
+</figure>
+<figure class="testi reveal">
+<div class=stars aria-label="Rated 5 out of 5">â˜…â˜…â˜…â˜…â˜…</div>
+<blockquote>Filed our company ITR and handled an income tax notice efficiently. Saved us time and moneyâ€¦</blockquote>
+<figcaption>
+<span class=avatar aria-hidden=true>PV</span> <span>
+<span class=who>Priya Verma</span>
+<span class=role>Startup Founder</span>
+</span>
+</figcaption>
+</figure>
+<figure class="testi reveal">
+<div class=stars aria-label="Rated 5 out of 5">â˜…â˜…â˜…â˜…â˜…</div>
+<blockquote>Best tax consultant in Amroha area. They reply on WhatsApp within minutesâ€¦</blockquote>
+<figcaption>
+<span class=avatar aria-hidden=true>MA</span> <span>
+<span class=who>Mohd. Asif</span>
+<span class=role>Manufacturer</span>
+</span>
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="section section--cta" id=cta aria-labelledby=ctaHeading>
+<div class=

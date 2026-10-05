@@ -1,0 +1,18 @@
+# Normalise text files: check out LF, commit LF. Windows contributors
+# (PowerShell, Notepad) must not reintroduce CRLF or a UTF-8 BOM.
+* text=auto eol=lf
+
+# No BOM anywhere, ever — a UTF-8 BOM before <!DOCTYPE html> flips the
+# document into quirks mode and corrupts Grid/Flexbox box models.
+*.html working-tree-encoding=UTF-8
+*.css  working-tree-encoding=UTF-8
+*.js   working-tree-encoding=UTF-8
+*.md   working-tree-encoding=UTF-8
+*.json working-tree-encoding=UTF-8
+*.py   working-tree-encoding=UTF-8
+*.ps1  working-tree-encoding=UTF-8
+
+# Binary assets: never touched by end-of-line normalisation.
+*.png  binary
+*.ico  binary
+*.svg  text eol=lf

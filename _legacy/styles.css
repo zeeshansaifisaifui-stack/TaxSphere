@@ -1,0 +1,459 @@
+/* ==========================================================================
+   TaxSphere Consultancy — Instagram surfaces (injected by instagram.js)
+   --------------------------------------------------------------------------
+   COLOUR DISCIPLINE — DO NOT COLLAPSE BACK TO A SINGLE COPPER TOKEN
+   --------------------------------------------------------------------------
+   --copper          #B07848  3.19:1 vs #FFFFFF  — FAIL AA. Borders, gradient
+                                            stops and the large H1 span only.
+   --copper-light    #C9966A  2.15:1 vs #FFFFFF  — FAIL AA. Visual gradients
+                                            and decorative states only.
+   --copper-text     #8A5A2B  6.06:1 vs #FFFFFF  — PASS AA. Every small or
+                                            inline copper text, plus body links.
+   --copper-btn      #94602F  5.02:1 vs #FFFFFF  — PASS AA. Filled button
+                                            backgrounds (CTA fills) only.
+   --copper-btn-hover #7F5226 7.09:1 vs #FFFFFF  — PASS AA. Hover / active
+                                            state of a filled copper button.
+   Rule: copper text under 18px or bolder than regular must use --copper-text.
+   Any --copper background sitting under white text must use --copper-btn.
+   ========================================================================== */
+
+/* File saved as UTF-8 (no BOM), LF line endings */
+
+/* ============ INSTAGRAM SURFACES (injected by instagram.js) ============ */
+:root{
+  --ig-a:#f09433;
+  --ig-b:#e6683c;
+  --ig-c:#dc2743;
+  --ig-d:#cc2366;
+  --ig-e:#bc1888;
+  --ig-grad:linear-gradient(135deg,var(--ig-a) 0%,var(--ig-b) 25%,var(--ig-c) 50%,var(--ig-d) 75%,var(--ig-e) 100%);
+}
+
+/* --- 1. injected contact card --------------------------------------- */
+a.info-card.ts-injected-insta{
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+  transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease;
+}
+a.info-card.ts-injected-insta:hover,
+a.info-card.ts-injected-insta:focus-visible{
+  border-color:var(--ig-d);
+  box-shadow:0 6px 18px rgba(204,35,102,.14);
+  transform:translateY(-2px);
+}
+a.info-card.ts-injected-insta:focus-visible{
+  outline:2px solid var(--navy-deep);
+  outline-offset:2px;
+}
+.ts-injected-insta .info-icon{
+  background:var(--ig-grad);
+}
+.ts-injected-insta .info-icon svg{fill:#fff}
+.ts-injected-insta .ts-insta-body{display:block;min-width:0}
+.ts-injected-insta .small{
+  display:block;
+  margin-top:4px;
+  font-size:.82rem;
+  line-height:1.5;
+  color:var(--muted);
+}
+
+/* --- 2. floating Instagram button (bottom-left) ---------------------- */
+.ts-insta-fab{
+  position:fixed;left:24px;bottom:24px;z-index:110;
+  width:56px;height:56px;border:0;border-radius:50%;padding:0;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;background:var(--ig-grad);
+  box-shadow:0 8px 24px rgba(15,23,42,.22);
+  transition:transform .2s ease,opacity .25s ease,visibility .25s ease;
+}
+.ts-insta-fab:hover{transform:scale(1.06)}
+.ts-insta-fab:focus-visible{outline:3px solid var(--navy-deep);outline-offset:3px}
+.ts-insta-fab svg{width:26px;height:26px;fill:#fff}
+.ts-insta-fab.is-hidden{opacity:0;visibility:hidden;transform:scale(.9)}
+
+/* --- 3. modal --------------------------------------------------------- */
+.ts-ig-overlay{
+  position:fixed;inset:0;z-index:300;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  background:rgba(11,30,91,.62);
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+  animation:ts-ig-fade .18s ease;
+}
+.ts-ig-overlay[hidden]{display:none}
+@keyframes ts-ig-fade{from{opacity:0}to{opacity:1}}
+
+.ts-ig-modal{
+  position:relative;
+  width:100%;max-width:420px;
+  background:var(--white);
+  border:1px solid var(--divider);
+  border-radius:var(--r-card);
+  padding:34px 26px 26px;
+  text-align:center;
+  box-shadow:0 24px 60px rgba(15,23,42,.32);
+  animation:ts-ig-rise .22s ease;
+}
+@keyframes ts-ig-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.ts-ig-close{
+  position:absolute;top:10px;right:10px;
+  width:44px;height:44px;
+  display:flex;align-items:center;justify-content:center;
+  border:0;border-radius:50%;background:transparent;
+  font-size:1.7rem;line-height:1;color:var(--muted);
+  cursor:pointer;
+}
+.ts-ig-close:hover{background:rgba(32,56,144,.08);color:var(--navy-deep)}
+.ts-ig-close:focus-visible{outline:2px solid var(--navy-deep);outline-offset:2px}
+
+.ts-ig-badge{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:64px;height:64px;margin-bottom:16px;
+  border-radius:18px;background:var(--ig-grad);
+  box-shadow:0 8px 20px rgba(204,35,102,.30);
+}
+.ts-ig-badge svg{width:34px;height:34px;fill:#fff}
+
+.ts-ig-modal h2{
+  margin:0 0 8px;
+  font-size:1.25rem;line-height:1.3;color:var(--navy-deep);
+}
+.ts-ig-modal p{
+  margin:0 0 20px;
+  font-size:.94rem;line-height:1.6;color:var(--muted);
+}
+.ts-ig-modal .ts-ig-note{
+  margin:14px 0 0;
+  font-size:.78rem;color:var(--muted);opacity:.85;
+}
+
+.ts-ig-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:48px;padding:12px 22px;
+  border-radius:var(--r-btn);
+  background:var(--ig-grad);color:#fff;
+  font-weight:700;font-size:.98rem;text-decoration:none;
+  box-shadow:0 8px 20px rgba(220,39,67,.28);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.ts-ig-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(220,39,67,.34);color:#fff;text-decoration:none}
+.ts-ig-cta:focus-visible{outline:3px solid var(--navy-deep);outline-offset:3px}
+.ts-ig-cta svg{width:20px;height:20px;fill:#fff}
+
+/* --- 4. scroll lock while open --------------------------------------- */
+body.ts-modal-open{overflow:hidden}
+
+/* --- 5. responsive ----------------------------------------------------- */
+@media (max-width:768px){
+  .ts-insta-fab{width:52px;height:52px;left:16px;bottom:16px}
+  .ts-ig-modal{padding:30px 20px 22px}
+}
+@media (max-width:420px){
+  .ts-ig-modal h2{font-size:1.1rem}
+}
+
+/* --- 6. reduced motion -------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .ts-ig-overlay,.ts-ig-modal,.ts-insta-fab,
+  a.info-card.ts-injected-insta,.ts-ig-cta{animation:none;transition:none}
+}
+
+/* --- 7. reduced motion is handled globally in index.html ---------------- */
+
+/* === /TS-INSTAGRAM MODULE === */
+
+/* ==========================================================================
+   WCAG AA REGRESSION FIX — copper button text colour
+   --------------------------------------------------------------------------
+   .nav-list a (0,1,1) outranks .btn-copper (0,1,0), so the desktop nav CTA
+   "Get Free Consultation" was rendering --navy-deep text on the --copper-btn
+   fill: 3.09:1, an AA fail. These two rules restore white text on every
+   filled copper surface regardless of which container the link sits in.
+   ========================================================================== */
+.nav-list a.btn,
+header .btn-copper,
+.btn.btn-copper{
+  color:#fff;
+}
+.nav-list a.btn:hover,
+header .btn-copper:hover,
+.btn.btn-copper:hover{
+  color:#fff;
+}
+
+/* ==========================================================================
+   CONTACT / CONSULTATION MODULE — Blue #1E3A8A + Gold #B68A3F
+   Floating WhatsApp number, sticky mobile call button, consultation popup
+   ========================================================================== */
+:root{
+  --ts-blue:#1E3A8A;
+  --ts-blue-deep:#16296B;
+  --ts-blue-soft:#EDF1FB;
+  --ts-gold:#B68A3F;
+  --ts-gold-light:#D8B26A;
+  --ts-gold-soft:#FBF4E6;
+}
+
+/* --- 1. floating WhatsApp button — visible number chip ------------------ */
+.fab-num{
+  position:absolute;
+  right:calc(100% + 14px);
+  top:50%;
+  transform:translateY(-50%);
+  padding:8px 14px;
+  border-radius:999px;
+  background:#fff;
+  color:#0f172a;
+  border:2px solid var(--wa);
+  box-shadow:0 8px 22px rgba(15,23,42,.20);
+  font-size:.86rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  white-space:nowrap;
+  pointer-events:none;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.fab-wa:hover .fab-num,
+.fab-wa:focus-visible .fab-num{
+  transform:translateY(-50%) translateX(-4px);
+  box-shadow:0 10px 26px rgba(15,23,42,.26);
+}
+
+/* --- 2. sticky call button (mobile only, bottom-left) ------------------- */
+.fab-call{
+  display:none;
+  position:fixed;
+  left:16px;
+  bottom:84px;
+  z-index:110;
+  width:auto;
+  height:54px;
+  min-width:54px;
+  padding:0 20px;
+  gap:9px;
+  border:0;
+  border-radius:999px;
+  background:var(--ts-blue);
+  box-shadow:0 10px 26px rgba(30,58,138,.38);
+  text-decoration:none;
+  color:#fff;
+  align-items:center;
+  justify-content:center;
+  animation:ts-call-in .4s ease both;
+}
+.fab-call::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:999px;
+  background:var(--ts-blue);
+  animation:pulse 2.4s ease-out infinite;
+  opacity:.55;
+}
+.fab-call > *{position:relative;z-index:1}
+.fab-call svg{
+  width:24px;
+  height:24px;
+  fill:#fff;
+  flex:0 0 auto;
+}
+.fab-call-label{
+  font-size:.92rem;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+.fab-call:hover,
+.fab-call:focus-visible{
+  background:var(--ts-blue-deep);
+  box-shadow:0 12px 30px rgba(30,58,138,.45);
+}
+.fab-call.is-suppressed{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(14px);
+}
+@keyframes ts-call-in{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* --- 3. "Get Consultation" popup --------------------------------------- */
+.consult-overlay{
+  position:fixed;
+  inset:0;
+  z-index:320;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(11,30,91,.66);
+  -webkit-backdrop-filter:blur(4px);
+  backdrop-filter:blur(4px);
+  animation:ts-consult-fade .18s ease;
+}
+.consult-overlay[hidden]{display:none}
+@keyframes ts-consult-fade{from{opacity:0}to{opacity:1}}
+
+.consult-modal{
+  position:relative;
+  width:100%;
+  max-width:460px;
+  max-height:92vh;
+  overflow-y:auto;
+  padding:30px 24px 24px;
+  background:#fff;
+  border:1px solid var(--divider);
+  border-top:5px solid var(--ts-blue);
+  border-radius:16px;
+  box-shadow:0 30px 70px rgba(15,23,42,.38);
+  text-align:left;
+  animation:ts-consult-rise .24s ease;
+}
+@keyframes ts-consult-rise{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.consult-close{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  font-size:1.7rem;
+  line-height:1;
+  color:var(--muted);
+  cursor:pointer;
+}
+.consult-close:hover{background:rgba(30,58,138,.08);color:var(--ts-blue)}
+.consult-close:focus-visible{outline:2px solid var(--ts-blue);outline-offset:2px}
+
+.consult-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  height:56px;
+  margin-bottom:14px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--ts-blue) 0%,var(--ts-blue-deep) 60%,var(--ts-gold) 100%);
+  box-shadow:0 8px 20px rgba(30,58,138,.30);
+}
+.consult-badge svg{width:28px;height:28px;fill:#fff}
+
+.consult-modal h2{
+  margin:0 0 6px;
+  font-size:1.4rem;
+  line-height:1.25;
+  color:var(--ts-blue);
+}
+.consult-sub{
+  margin:0 0 18px;
+  font-size:.93rem;
+  line-height:1.6;
+  color:var(--muted);
+}
+.consult-modal .field label{color:var(--ts-blue)}
+.consult-modal .field input:focus,
+.consult-modal .field select:focus,
+.consult-modal .field textarea:focus{
+  border-color:var(--ts-blue);
+  box-shadow:0 0 0 3px rgba(30,58,138,.16);
+}
+.consult-modal .req{color:#B91C1C}
+.consult-submit{
+  width:100%;
+  background:var(--ts-blue);
+  color:#fff;
+  box-shadow:0 6px 18px rgba(30,58,138,.28);
+}
+.consult-submit:hover{
+  background:var(--ts-blue-deep);
+  color:#fff;
+  box-shadow:0 10px 24px rgba(30,58,138,.36);
+}
+.consult-alt{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin:14px 0 0;
+}
+.consult-alt a{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  min-height:40px;
+  padding:8px 14px;
+  border:1px solid var(--divider);
+  border-radius:999px;
+  background:var(--ts-gold-soft);
+  color:#7a5a1f;
+  font-size:.86rem;
+  font-weight:600;
+  text-decoration:none;
+}
+.consult-alt a:hover{border-color:var(--ts-gold);color:#5f461a}
+.consult-note{
+  margin:12px 0 0;
+  font-size:.78rem;
+  line-height:1.5;
+  color:var(--muted);
+  text-align:center;
+}
+.consult-modal .field-error{
+  color:#B91C1C;
+  font-size:.82rem;
+  margin:6px 0 0;
+}
+body.consult-open{overflow:hidden}
+
+/* --- 4. responsive ------------------------------------------------------ */
+@media (max-width:768px){
+  .fab-call{display:inline-flex}
+  .fab-num{
+    padding:7px 12px;
+    font-size:.8rem;
+  }
+  .consult-modal{padding:26px 18px 20px}
+  .consult-modal h2{font-size:1.22rem}
+}
+@media (max-width:420px){
+  .fab-num{
+    padding:6px 10px;
+    font-size:.74rem;
+    right:calc(100% + 10px);
+  }
+  .fab-call{
+    height:50px;
+    padding:0 16px;
+    bottom:78px;
+  }
+  .fab-call-label{font-size:.86rem}
+  .consult-overlay{padding:12px}
+  .consult-modal{padding:24px 16px 18px}
+}
+@media (max-width:340px){
+  .fab-num{display:none}
+}
+
+/* --- 5. reduced motion --------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .fab-call,
+  .fab-num,
+  .consult-overlay,
+  .consult-modal{animation:none;transition:none}
+  .fab-call::before{animation:none}
+}

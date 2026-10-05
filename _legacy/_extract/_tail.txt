@@ -1,0 +1,189 @@
+﻿</main>
+<footer class=site-footer aria-label="Site footer">
+<div class=container>
+<div class=footer-grid>
+<div class=footer-brand>
+<span class=brand-text>Tax<span class=c>Sphere</span>
+</span>
+<p>Simplifying tax compliance for individuals, startups, traders and businesses.</p>
+<div class=social-row>
+<a class=social-btn href="https://wa.me/918126780246?text=Hi%20TaxSphere%2C%20I%20need%20help%20with%20GST%2FITR%2FTDS%20filing." target=_blank rel="noopener noreferrer" aria-label="Chat with TaxSphere Consultancy on WhatsApp (opens in a new tab)">💬 WhatsApp</a> <a class=social-btn href=https://www.instagram.com/taxsphere11 target=_blank rel="noopener noreferrer" aria-label="TaxSphere Consultancy on Instagram (opens in a new tab)">📷 Instagram</a> <a class=social-btn href="https://wa.me/919219481572?text=Hi%20TaxSphere%2C%20I%20need%20help%20with%20GST%2FITR%2FTDS%20filing." target=_blank rel="noopener noreferrer" aria-label="Chat with TaxSphere Consultancy on the alternate number (opens in a new tab)">📱 Alternate WA</a> <a class=social-btn href=mailto:Taxsphere11@gmail.com aria-label="Email TaxSphere Consultancy">✉️ Email</a>
+</div>
+</div>
+<nav class=footer-col aria-label="Company links">
+<h4>Company</h4>
+<ul>
+<li>
+<a href=#top>Home</a>
+</li>
+<li>
+<a href=#about>About Us</a>
+</li>
+<li>
+<a href=#why>Why Us</a>
+</li>
+<li>
+<a href=#reviews>Client Reviews</a>
+</li>
+</ul>
+</nav>
+<nav class=footer-col aria-label="Services links">
+<h4>Services</h4>
+<ul>
+<li>
+<a href=#services>GST Registration</a>
+</li>
+<li>
+<a href=#services>GST Return Filing</a>
+</li>
+<li>
+<a href=#services>GST Refund</a>
+</li>
+<li>
+<a href=#services>ITR Filing</a>
+</li>
+<li>
+<a href=#services>MSME Registration</a>
+</li>
+</ul>
+</nav>
+<nav class=footer-col aria-label="Support links">
+<h4>Support</h4>
+<ul>
+<li>
+<a href=#contact>Contact Us</a>
+</li>
+<li>
+<a href=#services>GST Notice Reply</a>
+</li>
+<li>
+<a href=#contact data-note=placeholder>Privacy Policy</a>
+</li>
+<li>
+<a href=#contact data-note=placeholder>Terms &amp; Conditions</a>
+</li>
+<li>
+<a href=#contact data-note=placeholder>Disclaimer</a>
+</li>
+</ul>
+</nav>
+<nav class=footer-col aria-label="Connect links">
+<h4>Connect</h4>
+<ul>
+<li>
+<a href="https://wa.me/918126780246?text=Hi%20TaxSphere%2C%20I%20need%20help%20with%20GST%2FITR%2FTDS%20filing." target=_blank rel=noopener>💬 WhatsApp</a>
+</li>
+<li>
+<a href=https://www.instagram.com/taxsphere11 target=_blank rel="noopener noreferrer">📷 Instagram</a>
+</li>
+<li>
+<a href="https://maps.google.com/?q=Mohammadi+Sarai+Amroha" target=_blank rel="noopener noreferrer">📍 Google Business</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class=footer-bottom>
+<p style=margin:0>© 2026 TaxSphere Consultancy. All rights reserved.</p>
+<nav aria-label=Legal>
+<a href=#contact data-note=placeholder>Privacy Policy</a> <a href=#contact data-note=placeholder>Terms &amp; Conditions</a> <a href=#contact data-note=placeholder>Disclaimer</a> <span>Made with ❤️ in Amroha</span>
+</nav>
+</div>
+</div>
+</footer>
+<div class=fab-stack>
+<button class="fab fab-top" id=backToTop type=button aria-label="Back to top">
+<svg viewBox="0 0 24 24" aria-hidden=true focusable=false>
+<path d="M12 19V5M5 12l7-7 7 7"/>
+</svg>
+</button> <a class="fab fab-wa" href="https://wa.me/918126780246?text=Hi%20TaxSphere%2C%20I%20need%20help%20with%20GST%2FITR%2FTDS%20filing." target=_blank rel=noopener aria-label="Chat with TaxSphere Consultancy on WhatsApp">
+<svg viewBox="0 0 24 24" aria-hidden=true focusable=false>
+<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.13-1.47-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.38-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.09-.16.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.13.17 1.74 2.65 4.21 3.72.59.25 1.05.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/>
+</svg>
+</a>
+</div>
+<button class="ts-insta-fab fab-ig" id=igFab type=button aria-label="Follow TaxSphere Consultancy on Instagram" aria-haspopup=dialog>
+<svg viewBox="0 0 24 24" aria-hidden=true focusable=false>
+<path fill=#fff d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.55.21.95.47 1.36.88.41.41.67.81.88 1.36.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.21.55-.47.95-.88 1.36-.41.41-.81.67-1.36.88-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42a3.7 3.7 0 0 1-1.36-.88 3.7 3.7 0 0 1-.88-1.36c-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.21-.55.47-.95.88-1.36.41-.41.81-.67 1.36-.88.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2Zm0 1.98c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07Zm0 3.37a5.45 5.45 0 1 1 0 10.9 5.45 5.45 0 0 1 0-10.9Zm0 1.98a3.47 3.47 0 1 0 0 6.94 3.47 3.47 0 0 0 0-6.94Zm5.67-3.46a1.27 1.27 0 1 1 0 2.54 1.27 1.27 0 0 1 0-2.54Z"/>
+</svg>
+</button>
+<div class=toast id=toast role=status aria-live=polite>✅ Thank you! We'll contact you shortly.</div>
+<div class=auth-overlay id=authOverlay hidden>
+<div class=auth-modal id=authLogin role=dialog aria-modal=true aria-labelledby=authLoginTitle hidden>
+<button class=auth-close type=button data-auth-close aria-label="Close dialog">×</button>
+<h2 id=authLoginTitle>Client Login</h2>
+<p class=auth-sub>Access your filings, notices and documents.</p>
+<form id=loginForm novalidate>
+<div class=field>
+<label for=lg-email>Email <span class=req aria-hidden=true>*</span>
+</label> <input type=email id=lg-email name=email autocomplete=email placeholder=you@example.com required>
+</div>
+<div class=field>
+<label for=lg-pass>Password <span class=req aria-hidden=true>*</span>
+</label> <input type=password id=lg-pass name=password autocomplete=current-password placeholder="Your password" required>
+</div>
+<button class="btn btn-copper" type=submit>Login</button>
+</form>
+<p class=auth-alt>Forgot password? <button type=button data-auth=forgot>Reset it</button>
+</p>
+<p class=auth-alt>New to TaxSphere? <button type=button data-auth=signup>Create an account</button>
+</p>
+</div>
+<div class=auth-modal id=authSignup role=dialog aria-modal=true aria-labelledby=authSignupTitle hidden>
+<button class=auth-close type=button data-auth-close aria-label="Close dialog">×</button>
+<h2 id=authSignupTitle>Create Your Account</h2>
+<p class=auth-sub>Free client portal — track filings, notices and deadlines.</p>
+<form id=signupForm novalidate>
+<div class=field>
+<label for=su-name>Full name <span class=req aria-hidden=true>*</span>
+</label> <input id=su-name name=name autocomplete=name placeholder="Your full name" required>
+</div>
+<div class=field>
+<label for=su-email>Email <span class=req aria-hidden=true>*</span>
+</label> <input type=email id=su-email name=email autocomplete=email placeholder=you@example.com required>
+</div>
+<div class=field>
+<label for=su-phone>Phone <span class=req aria-hidden=true>*</span>
+</label> <input type=tel id=su-phone name=phone autocomplete=tel inputmode=tel pattern=[0-9]{10} placeholder="10-digit mobile number" required>
+</div>
+<div class=field>
+<label for=su-pass>Password <span class=req aria-hidden=true>*</span>
+</label> <input type=password id=su-pass name=password autocomplete=new-password placeholder="Minimum 8 characters" minlength=8 required>
+</div>
+<button class="btn btn-copper" type=submit>Sign Up</button>
+</form>
+<p class=auth-alt>Already registered? <button type=button data-auth=login>Login</button>
+</p>
+</div>
+<div class=auth-modal id=authForgot role=dialog aria-modal=true aria-labelledby=authForgotTitle hidden>
+<button class=auth-close type=button data-auth-close aria-label="Close dialog">×</button>
+<h2 id=authForgotTitle>Reset Password</h2>
+<p class=auth-sub>We'll email you a secure link to set a new password.</p>
+<form id=forgotForm novalidate>
+<div class=field>
+<label for=fg-email>Email <span class=req aria-hidden=true>*</span>
+</label> <input type=email id=fg-email name=email autocomplete=email placeholder=you@example.com required>
+</div>
+<button class="btn btn-copper" type=submit>Send Reset Link</button>
+</form>
+<p class=auth-alt>Remembered it? <button type=button data-auth=login>Back to login</button>
+</p>
+</div>
+</div>
+<script>!function(){"use strict";var e=document.querySelector(".site-header"),t=document.getElementById("backToTop");function n(){var n=window.pageYOffset||document.documentElement.scrollTop;e.classList.toggle("is-scrolled",n>8),t.classList.toggle("is-visible",n>400)}var a=!1;window.addEventListener("scroll",function(){if(!a){a=!0;var e=!1,t=function(){e||(e=!0,a=!1,n())};"function"==typeof window.requestAnimationFrame?(window.requestAnimationFrame(t),setTimeout(t,60)):setTimeout(t,0)}},{passive:!0}),n(),t.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});var r=document.getElementById("navToggle"),o=document.getElementById("mobileMenu");function i(e){o.classList.toggle("is-open",e),r.setAttribute("aria-expanded",e?"true":"false"),r.setAttribute("aria-label",e?"Close navigation menu":"Open navigation menu")}r.addEventListener("click",function(){i("true"!==r.getAttribute("aria-expanded"))}),o.addEventListener("click",function(e){e.target.closest("a")&&i(!1)}),document.addEventListener("keydown",function(e){"Escape"!==e.key&&"Esc"!==e.key||"true"===r.getAttribute("aria-expanded")&&(i(!1),r.focus())}),window.addEventListener("resize",function(){window.innerWidth>=1024&&i(!1)});var s=document.querySelectorAll(".reveal");if("IntersectionObserver"in window){var c=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("is-visible"),c.unobserve(e.target))})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});s.forEach(function(e){c.observe(e)})}else s.forEach(function(e){e.classList.add("is-visible")});document.querySelectorAll('a[data-note="placeholder"]').forEach(function(e){e.addEventListener("click",function(e){e.preventDefault(),u("Full policy page coming soon — please contact us for details."),document.getElementById("contact").scrollIntoView({behavior:"smooth"})})});var l=document.getElementById("toast"),d=null;function u(e){l.textContent=e,l.classList.add("is-visible"),d&&clearTimeout(d),d=setTimeout(function(){l.classList.remove("is-visible")},5e3)}var m=document.getElementById("authOverlay"),f=null,p={login:"authLogin",signup:"authSignup",forgot:"authForgot"};function h(e){if(!m)return null;Object.prototype.hasOwnProperty.call(p,e)||(e="login");var t=null;if(Object.keys(p).forEach(function(n){var a=document.getElementById(p[n]);a&&(a.hidden=n!==e,n===e&&(t=a))}),!t)return null;m.hidden=!1,document.body.style.overflow="hidden";var n=t.querySelector("input")||t.querySelector(".auth-close");return n&&n.focus(),t}function v(){m&&!m.hidden&&(m.hidden=!0,Object.keys(p).forEach(function(e){var t=document.getElementById(p[e]);t&&(t.hidden=!0)}),document.body.style.overflow="",f&&document.contains(f)&&f.focus(),f=null)}window.switchAuth=h,document.addEventListener("click",function(e){var t,n=e.target.closest?e.target.closest("[data-auth]"):null;if(n)return e.preventDefault(),t=n.getAttribute("data-auth"),f=n||null,void h(t);(e.target.closest&&e.target.closest("[data-auth-close]")||e.target===m)&&v()}),document.addEventListener("keydown",function(e){"Escape"!==e.key&&27!==e.keyCode||v()}),[["loginForm","✅ Welcome back! Loading your dashboard…"],["signupForm","✅ Account created! We will verify your details shortly."],["forgotForm","✅ Password reset link sent to your registered email."]].forEach(function(e){var t=document.getElementById(e[0]);t&&t.addEventListener("submit",function(n){n.preventDefault();var a=!0;if(Array.prototype.forEach.call(t.querySelectorAll("input[required]"),function(e){var t=e.value.trim(),n=!t;n||"email"!==e.type||/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(t)||(n=!0),n||"phone"!==e.name||10===t.replace(/\D/g,"").length||(n=!0),!n&&"password"===e.name&&t.length<8&&(n=!0),n?(g(e,t?"email"===e.type?"Enter a valid email address.":"phone"===e.name?"Enter a valid 10-digit mobile number.":"Password must be at least 8 characters.":"This field is required."),a=!1):y(e)}),a)t.reset(),v(),u(e[1]);else{var r=t.querySelector('[aria-invalid="true"]');r&&r.focus()}})});var w=document.getElementById("contactForm");function g(e,t){var n=e.closest(".field"),a=n.querySelector(".field-error");a&&a.remove(),e.setAttribute("aria-invalid","true");var r=document.createElement("p");r.className="field-error",r.textContent=t,r.style.color="#B91C1C",r.style.fontSize=".82rem",r.style.margin="6px 0 0",n.appendChild(r)}function y(e){var t=e.closest(".field").querySelector(".field-error");t&&t.remove(),e.removeAttribute("aria-invalid")}w.addEventListener("submit",function(e){e.preventDefault();var t=w.elements.name,n=w.elements.phone,a=w.elements.email,r=w.elements.service,o=w.elements.message;[t,n,a,r].forEach(y);var i=!0;t.value.trim()||(g(t,"Please enter your name."),i=!1);var s=n.value.replace(/\D/g,"");if(10!==s.length&&(g(n,"Enter a valid 10-digit mobile number."),i=!1),a.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(a.value.trim())&&(g(a,"Enter a valid email address."),i=!1),r.value||(g(r,"Please select a service."),i=!1),i){var c=["New enquiry from TaxSphere Consultancy website","","Name: "+t.value.trim(),"Phone: "+s];a.value.trim()&&c.push("Email: "+a.value.trim()),c.push("Service: "+r.value),o.value.trim()&&c.push("Message: "+o.value.trim());var l="https://wa.me/918126780246?text="+encodeURIComponent(c.join("\n"));w.reset(),u("✅ Thank you! We'll contact you shortly."),setTimeout(function(){window.open(l,"_blank","noopener")},350)}else{var d=w.querySelector('[aria-invalid="true"]');d&&d.focus()}})}(),function(){var e={whatsapp:"https://wa.me/918126780246",whatsapp2:"https://wa.me/919219481572",call:"tel:+918126780246",call2:"tel:+919219481572",email:"mailto:Taxsphere11@gmail.com",instagram:"https://www.instagram.com/taxsphere11",googleBusiness:"#"};Object.keys(e).forEach(function(t){if("string"==typeof e[t]&&-1!==e[t].indexOf("?")){var n=e[t].split("?");e[t]=n[0]}}),window.__TAXSPHERE_SOCIAL__=e,window.__TAXSPHERE_INSTAGRAM__=e.instagram}();var SOCIAL=window.__TAXSPHERE_SOCIAL__||{};!SOCIAL.whatsapp&&window.console&&console.warn&&console.warn("TaxSphere: SOCIAL-LINKS.js did not load before script.js — falling back to the built-in wa.me / tel: literals."),function(){"use strict";var e=window.__TAXSPHERE_SOCIAL__||{},t=e.whatsapp||"https://wa.me/918126780246",n=e.whatsapp2||"https://wa.me/919219481572",a={hero:"Hi TaxSphere, I need help with GST/ITR/TDS filing.",service:function(e){return"Hi TaxSphere, I want help with "+e+". My name is ___, please call back."},forgot:"Hi TaxSphere, I forgot my password on the website. Please help me reset."};function r(){window.dataLayer=window.dataLayer||[]}document.querySelectorAll('a[href^="https://wa.me/"], a[href*="wa.me/"]').forEach(function(e){e.addEventListener("click",function(){try{var n=(e.closest("section, #home, #services, #why, #about, #contact")||{}).id||"unknown",o=e.closest(".service-card"),i=o&&(o.querySelector("h3")||{}).textContent||"",s=i?a.service(i.trim()):a.hero;e.href=t+"?text="+encodeURIComponent(s),r(),window.dataLayer.push({event:"taxsphere_wa_click",service:i.trim(),section:n,phone_e164:"918126780246"})}catch(e){}})}),document.querySelectorAll('a[href^="tel:"]').forEach(function(e){e.addEventListener("click",function(){try{r(),window.dataLayer.push({event:"taxsphere_call_click",number:e.getAttribute("href").replace("tel:",""),section:(e.closest("section, #home, #services, #why, #about, #contact")||{}).id||"unknown"}),e.animate&&e.animate([{transform:"scale(1)"},{transform:"scale(1.06)"},{transform:"scale(1)"}],{duration:600,easing:"ease-out"})}catch(e){}})});var o,i=null,s=0,c=0;function l(){if(i){var e,t=i;i=null,(e=Date.now())-s<1e3||(s=e,document.dispatchEvent(new CustomEvent("taxsphere:form-success",{detail:{ts:e},bubbles:!0}))),function(e){if(e){var t=Date.now();if(!(t-c<2e3)){c=t;try{fetch("/api/notify/new-enquiry",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e),keepalive:!0}).catch(function(){})}catch(e){}}}}(t)}}window.__ts_dispatch_success=l,document.addEventListener("submit",function(e){var t=e.target;if(t&&"contactForm"===t.id){var n=function(e){return(t.querySelector('[name="'+e+'"]')||{}).value||""};if(i={name:n("name"),phone:n("phone"),email:n("email"),service:n("service"),message:n("message")},!("MutationObserver"in window))var a=Date.now(),r=setInterval(function(){var e=document.getElementById("toast");e&&e.classList.contains("is-visible")&&-1!==e.textContent.indexOf("Thank you")?(clearInterval(r),l()):Date.now()-a>4e3&&clearInterval(r)},250)}},!0),(o=document.getElementById("toast"))&&"MutationObserver"in window&&new MutationObserver(function(){o.classList.contains("is-visible")&&-1!==o.textContent.indexOf("Thank you")&&l()}).observe(o,{attributes:!0,attributeFilter:["class"],childList:!0,characterData:!0,subtree:!0});var d=function(){e.whatsapp&&([["a.btn-wa",e.whatsapp],[".fab-wa",e.whatsapp],[".float-wa",e.whatsapp],['a[data-ts-wa="primary"]',e.whatsapp],['a[data-ts-wa="secondary"]',e.whatsapp2||e.whatsapp]].forEach(function(e){document.querySelectorAll(e[0]).forEach(function(t){t.href=e[1]+"?text="+encodeURIComponent(a.hero),t.target="_blank",t.rel="noopener noreferrer"})}),document.querySelectorAll(".info-card a.wa").forEach(function(t,n){var r=1===n&&e.whatsapp2||e.whatsapp;t.href=r+"?text="+encodeURIComponent(a.hero),t.target="_blank",t.rel="noopener noreferrer"}))};"loading"===document.readyState?document.addEventListener("DOMContentLoaded",d):d(),window.__TAXSPHERE_MSG__=a,window.__TAXSPHERE_WA__={primary:t,secondary:n}}(),function(){"use strict";var e=window.__TAXSPHERE_SOCIAL__||{},t=String(e.instagram||window.__TAXSPHERE_INSTAGRAM__||"https://www.instagram.com/taxsphere11").replace(/[?#].*$/,""),n="taxsphere11",a=!/^https:\/\/(www\.)?instagram\.com\//.test(t)||"https://www.instagram.com"===t.replace(/\/$/,""),r="ts_ig_nudge_at";function o(){if(a)return!1;var e=function(){try{return+window.localStorage.getItem(r)||0}catch(e){return 0}}();return!e||Date.now()-e>2592e6}function i(){!function(e){try{window.localStorage.setItem(r,String(e))}catch(e){}}(Date.now())}function s(e){return'<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+<path fill="'+(e||"currentColor")+'" d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.55.21.95.47 1.36.88.41.41.67.81.88 1.36.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.21.55-.47.95-.88 1.36-.41.41-.81.67-1.36.88-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42a3.7 3.7 0 0 1-1.36-.88 3.7 3.7 0 0 1-.88-1.36c-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.21-.55.47-.95.88-1.36.41-.41.81-.67 1.36-.88.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2Zm0 1.98c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.18.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.18-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.4 2.18.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.18.4 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.18-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.18.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.4-2.18a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.41-.16-1.03-.35-2.18-.4-1.24-.06-1.61-.07-4.75-.07Zm0 3.37a5.45 5.45 0 1 1 0 10.9 5.45 5.45 0 0 1 0-10.9Zm0 1.98a3.47 3.47 0 1 0 0 6.94 3.47 3.47 0 0 0 0-6.94Zm5.67-3.46a1.27 1.27 0 1 1 0 2.54 1.27 1.27 0 0 1 0-2.54Z"/>
+</svg>'}var c=null,l=null,d=0;function u(){return c||a||((c=document.createElement("div")).className="ts-ig-overlay",c.id="tsIgOverlay",c.hidden=!0,c.innerHTML='<div class="ts-ig-modal" role="dialog" aria-modal="true" aria-labelledby="tsIgTitle" aria-describedby="tsIgDesc">
+<button class="ts-ig-close" type="button" aria-label="Close Instagram dialog">&#215;</button>
+<span class="ts-ig-badge">'+s("#ffffff")+'</span>
+<h2 id="tsIgTitle">Follow TaxSphere on Instagram</h2>
+<p id="tsIgDesc">GST deadlines, filing checklists and TDS updates — short, practical posts from the Amroha team.</p>
+<a class="ts-ig-cta" href="'+t+'" target="_blank" rel="noopener noreferrer">'+s("#ffffff")+"<span>@"+n+'</span>
+</a>
+<p class="ts-ig-note">Opens instagram.com in a new tab.</p>
+</div>',document.body.appendChild(c),c.addEventListener("click",function(e){e.target===c&&f()}),c.querySelector(".ts-ig-close").addEventListener("click",f),c.querySelector(".ts-ig-cta").addEventListener("click",i),document.addEventListener("keydown",function(e){c&&!c.hidden&&("Escape"!==e.key&&27!==e.keyCode?"Tab"!==e.key&&9!==e.keyCode||function(e){var t=function(){if(!c)return[];return Array.prototype.filter.call(c.querySelectorAll("a[href], button:not([disabled])"),function(e){return null!==e.offsetParent||e===document.activeElement})}();if(!t.length)return;var n=t[0],a=t[t.length-1];e.shiftKey&&document.activeElement===n?(e.preventDefault(),a.focus()):e.shiftKey||document.activeElement!==a||(e.preventDefault(),n.focus())}(e):f())})),c}function m(e){if(!a&&u()){l=e||null,c.hidden=!1,document.body.classList.add("ts-modal-open"),document.body.style.overflow="hidden";var t=document.querySelector(".ts-insta-fab");t&&t.classList.add("is-hidden");var n=c.querySelector(".ts-ig-close");n&&n.focus()}}function f(){if(c&&!c.hidden){c.hidden=!0,document.body.classList.remove("ts-modal-open"),document.body.style.overflow="",i();var e=document.querySelector(".ts-insta-fab");e&&e.classList.remove("is-hidden"),l&&document.contains(l)&&l.focus(),l=null}}function p(){var e=Date.now();e-d<1e3||(d=e,o()&&window.setTimeout(function(){document.querySelector(".ts-ig-overlay:not([hidden])")||o()&&(i(),m(null))},8e3))}function h(){var e;!function(){if(!document.querySelector(".ts-injected-insta")){var e=document.querySelector(".info-list");if(e){var a=document.createElement("a");a.className="info-card ts-injected-insta",a.href=t,a.target="_blank",a.rel="noopener noreferrer",a.setAttribute("aria-label","Follow TaxSphere Consultancy on Instagram (opens in a new tab)"),a.innerHTML='<span class="info-icon">'+s("#cc2366")+'</span>
+<span class="ts-insta-body">
+<h3>Instagram</h3>
+<span class="val">@'+n+'</span>
+<span class="small">GST / ITR / TDS tips &amp; deadline reminders</span>
+</span>';var r=e.querySelector(".map-wrap");r?e.insertBefore(a,r):e.appendChild(a)}}}(),(e=document.querySelector('footer a.social-btn[aria-label*="Instagram"]')||document.querySelector('footer .social-row a[href="#"][aria-label*="Instagram"]')||document.querySelector('footer .social a[aria-label*="Instagram"]')||document.querySelector('footer a[aria-label*="Instagram"]'))&&e.getAttribute("href")!==t&&(e.href=t,e.target="_blank",e.rel="noopener noreferrer"),function(){if(!a){var e=document.querySelector(".ts-insta-fab");e||((e=document.createElement("button")).type="button",e.className="ts-insta-fab",e.setAttribute("aria-label","Follow TaxSphere Consultancy on Instagram"),e.setAttribute("aria-haspopup","dialog"),e.innerHTML=s("#ffffff"),document.body.appendChild(e)),"1"!==e.getAttribute("data-ts-ig")&&(e.setAttribute("data-ts-ig","1"),e.addEventListener("click",function(){m(e)}))}}(),document.addEventListener("taxsphere:form-success",p),window.addEventListener("taxsphere:form-success",p)}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",h):h(),window.__TAXSPHERE_IG__={url:t,handle:n,placeholder:a,open:m,close:f}}();</script>
+</body>
+</html>
