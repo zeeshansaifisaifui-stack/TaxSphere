@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxSphere - Review Moderation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #0E1A4B;
+            margin-bottom: 10px;
+        }
+        .login-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            max-width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .login-section input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .login-section button {
+            width: 100%;
+            padding: 12px;
+            background: #0E1A4B;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .login-section button:hover {
+            background: #1a2b5f;
+        }
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        .review-info h3 {
+            color: #0E1A4B;
+            margin-bottom: 5px;
+        }
+        .review-meta {
+            color: #666;
+            font-size: 14px;
+        }
+        .stars {
+            color: #B8860B;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .review-text {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+        .review-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+        .btn-approve {
+            background: #28a745;
+            color: white;
+        }
+        .btn-approve:hover {
+            background: #218838;
+        }
+        .btn-reject {
+            background: #dc3545;
+            color: white;
+        }
+        .btn-reject:hover {
+            background: #c82333;
+        }
+        .btn-delete {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-delete:hover {
+            background: #5a6268;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+        .tab.active {
+            background: #0E1A4B;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginSection" class="login-section">
+        <h2 style="color: #0E1A4B; margin-bottom: 20px;">Admin Login</h2>
+        <input type="password" id="adminToken" placeholder="Enter Admin Token" />
+        <button onclick="login()">Login</button>
+        <p id="loginError" style="color: #dc3545; margin-top: 10px; font-size: 14px;"></p>
+    </div>
+
+    <div id="adminPanel" class="container hidden">
+        <div class="header">
+            <h1>Review Moderation</h1>
+            <p>Approve or reject customer reviews</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="filterReviews('all')">All</button>
+            <button class="tab" onclick="filterReviews('pending')">Pending</button>
+            <button class="tab" onclick="filterReviews('approved')">Approved</button>
+        </div>
+
+        <div id="reviewsList"></div>
+    </div>
+
+    <script>
+        let adminToken = localStorage.getItem('taxsphere_admin_token');
+        let allReviews = [];
+        let currentFilter = 'all';
+
+        if (adminToken) {
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('adminPanel').classList.remove('hidden');
+            loadReviews();
+        }
+
+        function login() {
+            const token = document.getElementById('adminToken').value;
+            if (!token) {
+                document.getElementById('loginError').textContent = 'Please enter token';
+                return;
+            }
+            localStorage.setItem('taxsphere_admin_token', token);
+            adminToken = token;
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('adminPanel').classList.remove('hidden');
+            loadReviews();
+        }
+
+        async function loadReviews() {
+            try {
+                const response = await fetch('/api/admin/reviews', {
+                    headers: {
+                        'Authorization': 'Bearer ' + adminToken
+                    }
+                });
+                if (response.status === 401) {
+                    localStorage.removeItem('taxsphere_admin_token');
+                    location.reload();
+                    return;
+                }
+                const data = await response.json();
+                allReviews = data.reviews || [];
+                renderReviews();
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to load reviews');
+            }
+        }
+
+        function filterReviews(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            renderReviews();
+        }
+
+        function renderReviews() {
+            const list = document.getElementById('reviewsList');
+            let reviews = allReviews;
+            if (currentFilter === 'pending') reviews = allReviews.filter(r => !r.approved);
+            if (currentFilter === 'approved') reviews = allReviews.filter(r => r.approved);
+            
+            if (reviews.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No reviews found</p>';
+                return;
+            }
+
+            list.innerHTML = reviews.map(review => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-info">
+                            <h3>${escapeHtml(review.name)}</h3>
+                            <div class="review-meta">
+                                ${new Date(review.created_at).toLocaleString()}
+                                <span class="status-badge ${review.approved ? 'status-approved' : 'status-pending'}">
+                                    ${review.approved ? 'Approved' : 'Pending'}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stars">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+                    <div class="review-text">${escapeHtml(review.review_text)}</div>
+                    <div class="review-actions">
+                        ${!review.approved ? `<button class="btn btn-approve" onclick="updateReview('${review.id}', true)">Approve</button>` : ''}
+                        ${review.approved ? `<button class="btn btn-reject" onclick="updateReview('${review.id}', false)">Unapprove</button>` : ''}
+                        <button class="btn btn-delete" onclick="deleteReview('${review.id}')">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function updateReview(id, approved) {
+            try {
+                const response = await fetch('/api/admin/reviews?id=' + id, {
+                    method: 'PATCH',
+                    headers: {
+                        'Authorization': 'Bearer ' + adminToken,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ approved })
+                });
+                if (response.ok) {
+                    loadReviews();
+                } else {
+                    alert('Failed to update review');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to update review');
+            }
+        }
+
+        async function deleteReview(id) {
+            if (!confirm('Are you sure you want to delete this review?')) return;
+            try {
+                const response = await fetch('/api/admin/reviews?id=' + id, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': 'Bearer ' + adminToken
+                    }
+                });
+                if (response.ok) {
+                    loadReviews();
+                } else {
+                    alert('Failed to delete review');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Failed to delete review');
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
