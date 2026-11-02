@@ -26,11 +26,10 @@ function validateReview(name, rating, reviewText) {
     errors.push('Review text is required');
   } else {
     const trimmedText = reviewText.trim();
-    if (trimmedText.length < 30) {
-      errors.push('Review must be at least 30 characters');
-    } else if (trimmedText.length > 600) {
-      errors.push('Review must be 600 characters or less');
+    if (trimmedText.length === 0) {
+      errors.push('Review cannot be empty');
     }
+    // No minimum or maximum length restrictions
   }
   
   return errors;
