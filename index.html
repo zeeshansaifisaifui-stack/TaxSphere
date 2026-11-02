@@ -480,7 +480,7 @@
         <p id="noReviewMsg" style="text-align:center;opacity:0.6">No reviews yet. Be the first to review! ⭐</p>
 
         <div style="text-align:center;margin-top:24px">
-          <button id="openReviewForm" style="background:var(--navy);color:var(--white);padding:12px 24px;border-radius:999px;border:none;cursor:pointer">Write a Review ★</button>
+          <button id="openReviewForm" type="button" style="background:var(--navy);color:var(--white);padding:12px 24px;border-radius:999px;border:none;cursor:pointer">Write a Review ★</button>
         </div>
 
         <div id="reviewFormWrap" style="display:none;max-width:600px;margin:20px auto;background:var(--white);padding:20px;border-radius:16px;box-shadow:var(--shadow-card)">
@@ -498,6 +498,7 @@
             <label for="reviewText">Your Review *</label>
             <textarea id="reviewText" required placeholder="Write your experience..."></textarea>
           </div>
+          <div id="reviewStatusMsg" style="display:none;"></div>
           <button id="submitReview" class="btn-blue" type="button">Submit Review</button>
           <button id="cancelReview" class="btn-soft" type="button">Cancel</button>
         </div>

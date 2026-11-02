@@ -1,4 +1,4 @@
-﻿    (function () {
+    (function () {
       var selectedRating = 0;
 
       var openBtn = document.getElementById('openReviewForm');
@@ -32,7 +32,7 @@
 
         var rating = Number(r.rating) || 0;
         var starLine = '';
-        for (var i = 1; i <= 5; i++) { starLine += i <= rating ? 'â˜…' : 'â˜†'; }
+        for (var i = 1; i <= 5; i++) { starLine += i <= rating ? '★' : '☆'; }
 
         var stars = document.createElement('div');
         stars.style.cssText = 'color:var(--bronze);font-size:18px;letter-spacing:2px;margin-bottom:8px';
@@ -45,7 +45,7 @@
         var meta = document.createElement('p');
         meta.style.cssText = 'margin:0;font-size:13px;opacity:0.7';
         var date = r.created_at || r.date;
-        meta.textContent = r.name + ' Â· ' + (date ? new Date(date).toLocaleDateString() : '');
+        meta.textContent = r.name + ' · ' + (date ? new Date(date).toLocaleDateString() : '');
 
         card.appendChild(stars);
         card.appendChild(body);
@@ -133,7 +133,16 @@
             showStatus('Please select a rating.', 'error');
             return;
           }
-          if (!text) {\n            showStatus('Please enter your review.', 'error');\n            textInput.focus();\n            return;\n          }\n          if (text.trim().length === 0) {\n            showStatus('Review cannot be empty or whitespace-only.', 'error');\n            textInput.focus();\n            return;\n          }\n          // No minimum or maximum length restrictions on review text
+          if (!text) {
+            showStatus('Please enter your review.', 'error');
+            textInput.focus();
+            return;
+          }
+          if (text.trim().length === 0) {
+            showStatus('Review cannot be empty or whitespace-only.', 'error');
+            textInput.focus();
+            return;
+          }
 
           submitBtn.disabled = true;
           submitBtn.textContent = 'Submitting...';
@@ -176,4 +185,3 @@
 
       loadReviews();
     })();
-
