@@ -14,10 +14,11 @@ function validateReview(name, rating, reviewText) {
     }
   }
   
-  if (rating === undefined || rating === null || typeof rating !== 'number') {
+  if (rating === undefined || rating === null) {
     errors.push('Rating is required');
   } else {
-    if (rating < 1 || rating > 5 || !Number.isInteger(rating)) {
+    const numRating = Number(rating);
+    if (isNaN(numRating) || numRating < 1 || numRating > 5 || !Number.isInteger(numRating)) {
       errors.push('Rating must be between 1 and 5');
     }
   }
@@ -38,7 +39,6 @@ function getClientIP(req) {
   return req.headers['x-forwarded-for']?.split(',')[0].trim() || 
          req.headers['x-real-ip'] || 
          req.connection?.remoteAddress || 
-         req.socket?.remoteAddress ||
          'unknown';
 }
 
@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
 
   if (req.method === 'GET') {
     try {
-      console.log('[GET /api/reviews] Fetching approved reviews');
+      console.log('[GET /api/reviews] START');
       const { data, error } = await supabase
         .from('reviews')
         .select('id, name, rating, message, created_at, approved')
@@ -66,16 +66,11 @@ module.exports = async (req, res) => {
         .order('created_at', { ascending: false });
 
       if (error) {
-        console.error('[GET /api/reviews] Supabase error:', {
-          message: error.message,
-          code: error.code,
-          details: error.details,
-          hint: error.hint
-        });
+        console.error('[GET /api/reviews] ERR code=' + error.code + ' msg=' + error.message);
         return res.status(500).json({ error: 'Failed to fetch reviews' });
       }
 
-      console.log('[GET /api/reviews] Success, count:', data?.length || 0);
+      console.log('[GET /api/reviews] OK count=' + (data ? data.length : 0));
       const reviews = (data || []).map(r => ({
         id: r.id,
         name: r.name,
@@ -85,53 +80,40 @@ module.exports = async (req, res) => {
         created_at: r.created_at,
         approved: r.approved
       }));
-      return res.status(200).json({ reviews });
+      return res.status(200).json({ reviews: reviews });
     } catch (err) {
-      console.error('[GET /api/reviews] Exception:', err.message);
+      console.error('[GET /api/reviews] EXC=' + err.message);
       return res.status(500).json({ error: 'Internal server error' });
     }
   }
 
   if (req.method === 'POST') {
     try {
-      console.log('[POST /api/reviews] Body:', JSON.stringify(req.body));
-      const { name, rating, reviewText, message } = req.body;
-      const reviewContent = reviewText || message;
+      console.log('[POST /api/reviews] START');
+      const body = req.body || {};
+      const name = body.name;
+      const rating = body.rating;
+      const reviewContent = body.reviewText || body.message || body.review || body.text;
 
       const errors = validateReview(name, rating, reviewContent);
       if (errors.length > 0) {
-        console.error('[POST /api/reviews] Validation errors:', errors);
+        console.error('[POST /api/reviews] VAL_ERR=' + errors.join(';'));
         return res.status(400).json({ error: errors.join(', ') });
       }
 
-      const trimmedName = name.trim();
-      const trimmedText = reviewContent.trim();
-
-      const clientIP = getClientIP(req);
-      const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
-      
-      try {
-        const { data: recentSubmissions } = await supabase
-          .from('reviews')
-          .select('id')
-          .gte('created_at', fiveMinutesAgo);
-
-        if (recentSubmissions && recentSubmissions.length > 10) {
-          return res.status(429).json({ error: 'Too many submissions. Please try again later.' });
-        }
-      } catch (e) {
-        console.error('[POST /api/reviews] Spam check error (non-fatal):', e.message);
-      }
+      const trimmedName = String(name).trim();
+      const trimmedText = String(reviewContent).trim();
+      const numRating = Number(rating);
 
       const insertData = {
         name: trimmedName,
-        rating: parseInt(rating),
+        rating: numRating,
         message: trimmedText,
         approved: false
       };
 
-      console.log('[POST /api/reviews] Inserting:', { name: insertData.name, rating: insertData.rating, messageLength: insertData.message.length });
-
+      console.log('[POST /api/reviews] INSERT name=' + trimmedName.substring(0,20) + ' rating=' + numRating);
+      
       const { data, error } = await supabase
         .from('reviews')
         .insert([insertData])
@@ -139,22 +121,17 @@ module.exports = async (req, res) => {
         .single();
 
       if (error) {
-        console.error('[POST /api/reviews] Supabase insert error:', {
-          message: error.message,
-          code: error.code,
-          details: error.details,
-          hint: error.hint
-        });
+        console.error('[POST /api/reviews] DB_ERR code=' + error.code + ' msg=' + error.message);
         return res.status(500).json({ error: 'Failed to submit review' });
       }
 
-      console.log('[POST /api/reviews] Success, inserted id:', data.id);
+      console.log('[POST /api/reviews] OK id=' + data.id);
       return res.status(201).json({ 
         message: 'Review submitted successfully. It will be visible after admin approval.',
         review: data 
       });
     } catch (err) {
-      console.error('[POST /api/reviews] Exception:', err.message);
+      console.error('[POST /api/reviews] EXC=' + err.message);
       return res.status(500).json({ error: 'Internal server error' });
     }
   }
