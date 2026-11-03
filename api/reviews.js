@@ -14,7 +14,7 @@ function validateReview(name, rating, reviewText) {
     }
   }
   
-  if (!rating || typeof rating !== 'number') {
+  if (rating === undefined || rating === null || typeof rating !== 'number') {
     errors.push('Rating is required');
   } else {
     if (rating < 1 || rating > 5 || !Number.isInteger(rating)) {
@@ -29,7 +29,6 @@ function validateReview(name, rating, reviewText) {
     if (trimmedText.length === 0) {
       errors.push('Review cannot be empty');
     }
-    // No minimum or maximum length restrictions
   }
   
   return errors;
@@ -39,11 +38,11 @@ function getClientIP(req) {
   return req.headers['x-forwarded-for']?.split(',')[0].trim() || 
          req.headers['x-real-ip'] || 
          req.connection?.remoteAddress || 
+         req.socket?.remoteAddress ||
          'unknown';
 }
 
 module.exports = async (req, res) => {
-  // Set CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
@@ -59,72 +58,79 @@ module.exports = async (req, res) => {
 
   if (req.method === 'GET') {
     try {
-      // Only return approved reviews for public access
+      console.log('[GET /api/reviews] Fetching approved reviews');
       const { data, error } = await supabase
         .from('reviews')
-        .select('id, name, rating, review_text, created_at')
+        .select('id, name, rating, message, created_at, approved')
         .eq('approved', true)
         .order('created_at', { ascending: false });
 
       if (error) {
-        console.error('Error fetching reviews:', error);
+        console.error('[GET /api/reviews] Supabase error:', {
+          message: error.message,
+          code: error.code,
+          details: error.details,
+          hint: error.hint
+        });
         return res.status(500).json({ error: 'Failed to fetch reviews' });
       }
 
-      return res.status(200).json({ reviews: data || [] });
+      console.log('[GET /api/reviews] Success, count:', data?.length || 0);
+      const reviews = (data || []).map(r => ({
+        id: r.id,
+        name: r.name,
+        rating: r.rating,
+        review_text: r.message,
+        message: r.message,
+        created_at: r.created_at,
+        approved: r.approved
+      }));
+      return res.status(200).json({ reviews });
     } catch (err) {
-      console.error('Error:', err);
+      console.error('[GET /api/reviews] Exception:', err.message);
       return res.status(500).json({ error: 'Internal server error' });
     }
   }
 
   if (req.method === 'POST') {
     try {
-      const { name, rating, reviewText } = req.body;
+      console.log('[POST /api/reviews] Body:', JSON.stringify(req.body));
+      const { name, rating, reviewText, message } = req.body;
+      const reviewContent = reviewText || message;
 
-      // Validate input
-      const errors = validateReview(name, rating, reviewText);
+      const errors = validateReview(name, rating, reviewContent);
       if (errors.length > 0) {
+        console.error('[POST /api/reviews] Validation errors:', errors);
         return res.status(400).json({ error: errors.join(', ') });
       }
 
       const trimmedName = name.trim();
-      const trimmedText = reviewText.trim();
+      const trimmedText = reviewContent.trim();
 
-      // Basic spam protection - check for very recent submissions from same IP
       const clientIP = getClientIP(req);
       const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
       
-      // Only check if ip_address column exists
       try {
         const { data: recentSubmissions } = await supabase
           .from('reviews')
           .select('id')
-          .eq('ip_address', clientIP)
           .gte('created_at', fiveMinutesAgo);
 
-        if (recentSubmissions && recentSubmissions.length > 0) {
+        if (recentSubmissions && recentSubmissions.length > 10) {
           return res.status(429).json({ error: 'Too many submissions. Please try again later.' });
         }
       } catch (e) {
-        // If ip_address column doesn't exist yet, skip spam check
+        console.error('[POST /api/reviews] Spam check error (non-fatal):', e.message);
       }
 
-      // Insert review as pending (not approved) - compatible with existing schema
       const insertData = {
         name: trimmedName,
         rating: parseInt(rating),
-        review_text: trimmedText,
+        message: trimmedText,
         approved: false
       };
-      
-      // Add optional fields if they exist
-      try {
-        insertData.ip_address = clientIP;
-        insertData.user_agent = req.headers['user-agent'] || 'unknown';
-      } catch (e) {
-        // Skip if columns don't exist
-      }
+
+      console.log('[POST /api/reviews] Inserting:', { name: insertData.name, rating: insertData.rating, messageLength: insertData.message.length });
 
       const { data, error } = await supabase
         .from('reviews')
@@ -133,16 +139,22 @@ module.exports = async (req, res) => {
         .single();
 
       if (error) {
-        console.error('Error inserting review:', error);
+        console.error('[POST /api/reviews] Supabase insert error:', {
+          message: error.message,
+          code: error.code,
+          details: error.details,
+          hint: error.hint
+        });
         return res.status(500).json({ error: 'Failed to submit review' });
       }
 
+      console.log('[POST /api/reviews] Success, inserted id:', data.id);
       return res.status(201).json({ 
         message: 'Review submitted successfully. It will be visible after admin approval.',
         review: data 
       });
     } catch (err) {
-      console.error('Error:', err);
+      console.error('[POST /api/reviews] Exception:', err.message);
       return res.status(500).json({ error: 'Internal server error' });
     }
   }

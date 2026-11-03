@@ -40,7 +40,7 @@
 
         var body = document.createElement('p');
         body.style.cssText = 'margin:0 0 8px;white-space:pre-wrap';
-        body.textContent = r.review_text || r.text;
+        body.textContent = r.review_text || r.message || r.text;
 
         var meta = document.createElement('p');
         meta.style.cssText = 'margin:0;font-size:13px;opacity:0.7';
