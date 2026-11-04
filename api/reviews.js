@@ -2,7 +2,7 @@ const { supabase } = require('./supabase-client');
 
 function validateReview(name, rating, reviewText) {
   const errors = [];
-  
+
   if (!name || typeof name !== 'string') {
     errors.push('Name is required');
   } else {
@@ -13,7 +13,7 @@ function validateReview(name, rating, reviewText) {
       errors.push('Name must be 80 characters or less');
     }
   }
-  
+
   if (rating === undefined || rating === null) {
     errors.push('Rating is required');
   } else {
@@ -22,7 +22,7 @@ function validateReview(name, rating, reviewText) {
       errors.push('Rating must be between 1 and 5');
     }
   }
-  
+
   if (!reviewText || typeof reviewText !== 'string') {
     errors.push('Review text is required');
   } else {
@@ -31,15 +31,15 @@ function validateReview(name, rating, reviewText) {
       errors.push('Review cannot be empty');
     }
   }
-  
+
   return errors;
 }
 
 function getClientIP(req) {
-  return req.headers['x-forwarded-for']?.split(',')[0].trim() || 
-         req.headers['x-real-ip'] || 
-         req.connection?.remoteAddress || 
-         'unknown';
+  return req.headers['x-forwarded-for']?.split(',')[0].trim() ||
+    req.headers['x-real-ip'] ||
+    req.connection?.remoteAddress ||
+    'unknown';
 }
 
 module.exports = async (req, res) => {
@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
       const { data, error } = await supabase
         .from('reviews')
         .select('id, name, rating, message, created_at, approved')
-        .eq('approved', true)
+
         .order('created_at', { ascending: false });
 
       if (error) {
@@ -109,11 +109,11 @@ module.exports = async (req, res) => {
         name: trimmedName,
         rating: numRating,
         message: trimmedText,
-        approved: false
+        approved: true
       };
 
-      console.log('[POST /api/reviews] INSERT name=' + trimmedName.substring(0,20) + ' rating=' + numRating);
-      
+      console.log('[POST /api/reviews] INSERT name=' + trimmedName.substring(0, 20) + ' rating=' + numRating);
+
       const { data, error } = await supabase
         .from('reviews')
         .insert([insertData])
@@ -126,9 +126,9 @@ module.exports = async (req, res) => {
       }
 
       console.log('[POST /api/reviews] OK id=' + data.id);
-      return res.status(201).json({ 
+      return res.status(201).json({
         message: 'Review submitted successfully. It will be visible after admin approval.',
-        review: data 
+        review: data
       });
     } catch (err) {
       console.error('[POST /api/reviews] EXC=' + err.message);
